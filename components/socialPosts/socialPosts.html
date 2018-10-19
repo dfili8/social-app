@@ -1,0 +1,11 @@
+<div class="header">
+    <h1>{{$ctrl.title}}</h1>
+    <button on-click="$ctrl.hide()" id="newPost">New Post</button>
+</div>
+<div id="list" ng-init="showHide=false">
+    <ul ng-if="!showHide">
+        <post ng-repeat="post in $ctrl.list" item="post"></post>
+    </ul>
+</div>
+
+<postform on-submit="$ctrl.addPost" ng-if="!showHide"></postform>
